@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6e8e323554bf4453af2e3aab2f574e2d" Name="Diagram1">
+        <EntityTypeShape EntityType="ttcn_btlModel.CTPNHAP" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ttcn_btlModel.CTPXUAT" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ttcn_btlModel.NHANVIEN" Width="1.5" PointX="1.5" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ttcn_btlModel.PNHAP" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ttcn_btlModel.PXUAT" Width="1.5" PointX="3.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ttcn_btlModel.THUOC" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ttcn_btlModel.TONKHO" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <AssociationConnector Association="ttcn_btlModel.FK_CTPNHAP_PNHAP" ManuallyRouted="false" />
+        <AssociationConnector Association="ttcn_btlModel.FK_CTPNHAP_THUOC" ManuallyRouted="false" />
+        <AssociationConnector Association="ttcn_btlModel.FK_CTPXUAT_PXUAT" ManuallyRouted="false" />
+        <AssociationConnector Association="ttcn_btlModel.FK_CTPXUAT_THUOC" ManuallyRouted="false" />
+        <AssociationConnector Association="ttcn_btlModel.FK_PhieuNhap_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="ttcn_btlModel.FK_PhieuXuat_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="ttcn_btlModel.FK_TONKHO_THUOC" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ttcn_btlModelStoreContainer" CdmEntityContainer="ttcn_btlEntities">
+    <EntitySetMapping Name="CTPNHAPs">
+      <EntityTypeMapping TypeName="ttcn_btlModel.CTPNHAP">
+        <MappingFragment StoreEntitySet="CTPNHAP">
+          <ScalarProperty Name="sophieu" ColumnName="sophieu" />
+          <ScalarProperty Name="mathuoc" ColumnName="mathuoc" />
+          <ScalarProperty Name="dvtinh" ColumnName="dvtinh" />
+          <ScalarProperty Name="nsx" ColumnName="nsx" />
+          <ScalarProperty Name="hsd" ColumnName="hsd" />
+          <ScalarProperty Name="slnhap" ColumnName="slnhap" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CTPXUATs">
+      <EntityTypeMapping TypeName="ttcn_btlModel.CTPXUAT">
+        <MappingFragment StoreEntitySet="CTPXUAT">
+          <ScalarProperty Name="sophieu" ColumnName="sophieu" />
+          <ScalarProperty Name="mathuoc" ColumnName="mathuoc" />
+          <ScalarProperty Name="dvtinh" ColumnName="dvtinh" />
+          <ScalarProperty Name="slxuat" ColumnName="slxuat" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHANVIENs">
+      <EntityTypeMapping TypeName="ttcn_btlModel.NHANVIEN">
+        <MappingFragment StoreEntitySet="NHANVIEN">
+          <ScalarProperty Name="manv" ColumnName="manv" />
+          <ScalarProperty Name="tennv" ColumnName="tennv" />
+          <ScalarProperty Name="chucvu" ColumnName="chucvu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PNHAPs">
+      <EntityTypeMapping TypeName="ttcn_btlModel.PNHAP">
+        <MappingFragment StoreEntitySet="PNHAP">
+          <ScalarProperty Name="sophieu" ColumnName="sophieu" />
+          <ScalarProperty Name="manv" ColumnName="manv" />
+          <ScalarProperty Name="ngaynhap" ColumnName="ngaynhap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PXUATs">
+      <EntityTypeMapping TypeName="ttcn_btlModel.PXUAT">
+        <MappingFragment StoreEntitySet="PXUAT">
+          <ScalarProperty Name="sophieu" ColumnName="sophieu" />
+          <ScalarProperty Name="manv" ColumnName="manv" />
+          <ScalarProperty Name="ngayxuat" ColumnName="ngayxuat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="THUOCs">
+      <EntityTypeMapping TypeName="ttcn_btlModel.THUOC">
+        <MappingFragment StoreEntitySet="THUOC">
+          <ScalarProperty Name="mathuoc" ColumnName="mathuoc" />
+          <ScalarProperty Name="tenthuoc" ColumnName="tenthuoc" />
+          <ScalarProperty Name="hoatchat" ColumnName="hoatchat" />
+          <ScalarProperty Name="loaithuoc" ColumnName="loaithuoc" />
+          <ScalarProperty Name="mansx" ColumnName="mansx" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TONKHOes">
+      <EntityTypeMapping TypeName="ttcn_btlModel.TONKHO">
+        <MappingFragment StoreEntitySet="TONKHO">
+          <ScalarProperty Name="ngaykk" ColumnName="ngaykk" />
+          <ScalarProperty Name="mathuoc" ColumnName="mathuoc" />
+          <ScalarProperty Name="sldau" ColumnName="sldau" />
+          <ScalarProperty Name="slnhap" ColumnName="slnhap" />
+          <ScalarProperty Name="slxuat" ColumnName="slxuat" />
+          <ScalarProperty Name="slcovande" ColumnName="slcovande" />
+          <ScalarProperty Name="slcuoi" ColumnName="slcuoi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

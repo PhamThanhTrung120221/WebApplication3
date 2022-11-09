@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ttcn_btlModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CTPNHAP">
+    <Key>
+      <PropertyRef Name="sophieu" />
+    </Key>
+    <Property Name="sophieu" Type="Int32" Nullable="false" />
+    <Property Name="mathuoc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="dvtinh" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nsx" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="hsd" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="slnhap" Type="Int32" Nullable="false" />
+    <Property Name="dongia" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PNHAP" Relationship="Self.FK_CTPNHAP_PNHAP" FromRole="CTPNHAP" ToRole="PNHAP" />
+    <NavigationProperty Name="THUOC" Relationship="Self.FK_CTPNHAP_THUOC" FromRole="CTPNHAP" ToRole="THUOC" />
+  </EntityType>
+  <EntityType Name="CTPXUAT">
+    <Key>
+      <PropertyRef Name="sophieu" />
+    </Key>
+    <Property Name="sophieu" Type="Int32" Nullable="false" />
+    <Property Name="mathuoc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="dvtinh" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="slxuat" Type="Int32" Nullable="false" />
+    <Property Name="dongia" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PXUAT" Relationship="Self.FK_CTPXUAT_PXUAT" FromRole="CTPXUAT" ToRole="PXUAT" />
+    <NavigationProperty Name="THUOC" Relationship="Self.FK_CTPXUAT_THUOC" FromRole="CTPXUAT" ToRole="THUOC" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="manv" />
+    </Key>
+    <Property Name="manv" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="tennv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="chucvu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PNHAPs" Relationship="Self.FK_PhieuNhap_NhanVien" FromRole="NHANVIEN" ToRole="PNHAP" />
+    <NavigationProperty Name="PXUATs" Relationship="Self.FK_PhieuXuat_NhanVien" FromRole="NHANVIEN" ToRole="PXUAT" />
+  </EntityType>
+  <EntityType Name="PNHAP">
+    <Key>
+      <PropertyRef Name="sophieu" />
+    </Key>
+    <Property Name="sophieu" Type="Int32" Nullable="false" />
+    <Property Name="manv" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ngaynhap" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="CTPNHAP" Relationship="Self.FK_CTPNHAP_PNHAP" FromRole="PNHAP" ToRole="CTPNHAP" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_PhieuNhap_NhanVien" FromRole="PNHAP" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="PXUAT">
+    <Key>
+      <PropertyRef Name="sophieu" />
+    </Key>
+    <Property Name="sophieu" Type="Int32" Nullable="false" />
+    <Property Name="manv" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ngayxuat" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="CTPXUAT" Relationship="Self.FK_CTPXUAT_PXUAT" FromRole="PXUAT" ToRole="CTPXUAT" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_PhieuXuat_NhanVien" FromRole="PXUAT" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="THUOC">
+    <Key>
+      <PropertyRef Name="mathuoc" />
+    </Key>
+    <Property Name="mathuoc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="tenthuoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="hoatchat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="loaithuoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mansx" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CTPNHAPs" Relationship="Self.FK_CTPNHAP_THUOC" FromRole="THUOC" ToRole="CTPNHAP" />
+    <NavigationProperty Name="CTPXUATs" Relationship="Self.FK_CTPXUAT_THUOC" FromRole="THUOC" ToRole="CTPXUAT" />
+    <NavigationProperty Name="TONKHOes" Relationship="Self.FK_TONKHO_THUOC" FromRole="THUOC" ToRole="TONKHO" />
+  </EntityType>
+  <EntityType Name="TONKHO">
+    <Key>
+      <PropertyRef Name="ngaykk" />
+      <PropertyRef Name="mathuoc" />
+    </Key>
+    <Property Name="ngaykk" Type="Int32" Nullable="false" />
+    <Property Name="mathuoc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="sldau" Type="Int32" Nullable="false" />
+    <Property Name="slnhap" Type="Int32" Nullable="false" />
+    <Property Name="slxuat" Type="Int32" Nullable="false" />
+    <Property Name="slcovande" Type="Int32" Nullable="false" />
+    <Property Name="slcuoi" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="THUOC" Relationship="Self.FK_TONKHO_THUOC" FromRole="TONKHO" ToRole="THUOC" />
+  </EntityType>
+  <Association Name="FK_CTPNHAP_PNHAP">
+    <End Role="PNHAP" Type="Self.PNHAP" Multiplicity="1" />
+    <End Role="CTPNHAP" Type="Self.CTPNHAP" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PNHAP">
+        <PropertyRef Name="sophieu" />
+      </Principal>
+      <Dependent Role="CTPNHAP">
+        <PropertyRef Name="sophieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTPNHAP_THUOC">
+    <End Role="THUOC" Type="Self.THUOC" Multiplicity="1" />
+    <End Role="CTPNHAP" Type="Self.CTPNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THUOC">
+        <PropertyRef Name="mathuoc" />
+      </Principal>
+      <Dependent Role="CTPNHAP">
+        <PropertyRef Name="mathuoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTPXUAT_PXUAT">
+    <End Role="PXUAT" Type="Self.PXUAT" Multiplicity="1" />
+    <End Role="CTPXUAT" Type="Self.CTPXUAT" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PXUAT">
+        <PropertyRef Name="sophieu" />
+      </Principal>
+      <Dependent Role="CTPXUAT">
+        <PropertyRef Name="sophieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTPXUAT_THUOC">
+    <End Role="THUOC" Type="Self.THUOC" Multiplicity="1" />
+    <End Role="CTPXUAT" Type="Self.CTPXUAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THUOC">
+        <PropertyRef Name="mathuoc" />
+      </Principal>
+      <Dependent Role="CTPXUAT">
+        <PropertyRef Name="mathuoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuNhap_NhanVien">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="PNHAP" Type="Self.PNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="manv" />
+      </Principal>
+      <Dependent Role="PNHAP">
+        <PropertyRef Name="manv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuXuat_NhanVien">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="PXUAT" Type="Self.PXUAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="manv" />
+      </Principal>
+      <Dependent Role="PXUAT">
+        <PropertyRef Name="manv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TONKHO_THUOC">
+    <End Role="THUOC" Type="Self.THUOC" Multiplicity="1" />
+    <End Role="TONKHO" Type="Self.TONKHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THUOC">
+        <PropertyRef Name="mathuoc" />
+      </Principal>
+      <Dependent Role="TONKHO">
+        <PropertyRef Name="mathuoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ttcn_btlEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CTPNHAPs" EntityType="Self.CTPNHAP" />
+    <EntitySet Name="CTPXUATs" EntityType="Self.CTPXUAT" />
+    <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+    <EntitySet Name="PNHAPs" EntityType="Self.PNHAP" />
+    <EntitySet Name="PXUATs" EntityType="Self.PXUAT" />
+    <EntitySet Name="THUOCs" EntityType="Self.THUOC" />
+    <EntitySet Name="TONKHOes" EntityType="Self.TONKHO" />
+    <AssociationSet Name="FK_CTPNHAP_PNHAP" Association="Self.FK_CTPNHAP_PNHAP">
+      <End Role="PNHAP" EntitySet="PNHAPs" />
+      <End Role="CTPNHAP" EntitySet="CTPNHAPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTPNHAP_THUOC" Association="Self.FK_CTPNHAP_THUOC">
+      <End Role="THUOC" EntitySet="THUOCs" />
+      <End Role="CTPNHAP" EntitySet="CTPNHAPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTPXUAT_PXUAT" Association="Self.FK_CTPXUAT_PXUAT">
+      <End Role="PXUAT" EntitySet="PXUATs" />
+      <End Role="CTPXUAT" EntitySet="CTPXUATs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTPXUAT_THUOC" Association="Self.FK_CTPXUAT_THUOC">
+      <End Role="THUOC" EntitySet="THUOCs" />
+      <End Role="CTPXUAT" EntitySet="CTPXUATs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuNhap_NhanVien" Association="Self.FK_PhieuNhap_NhanVien">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="PNHAP" EntitySet="PNHAPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuXuat_NhanVien" Association="Self.FK_PhieuXuat_NhanVien">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="PXUAT" EntitySet="PXUATs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TONKHO_THUOC" Association="Self.FK_TONKHO_THUOC">
+      <End Role="THUOC" EntitySet="THUOCs" />
+      <End Role="TONKHO" EntitySet="TONKHOes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
