@@ -299,16 +299,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\PNhap\Index.cshtml" />
-    <Content Include="Views\PXuat\Index.cshtml" />
     <Content Include="Views\PTHUOC\Index.cshtml" />
     <Content Include="Views\CTPNhap\Index.cshtml" />
+    <Content Include="Views\PNhap\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\CTPXuat\" />
     <Folder Include="Views\Default\" />
     <Folder Include="Views\NhanVien\" />
+    <Folder Include="Views\PXuat\" />
     <Folder Include="Views\TonKho\" />
   </ItemGroup>
   <ItemGroup>
