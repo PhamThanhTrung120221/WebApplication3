@@ -171,11 +171,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CTPNhapController.cs" />
+    <Compile Include="Controllers\CTPXuatController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NhanVienController.cs" />
     <Compile Include="Controllers\PNhapController.cs" />
     <Compile Include="Controllers\PXuatController.cs" />
     <Compile Include="Controllers\THUOCController.cs" />
+    <Compile Include="Controllers\TonKhoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -298,11 +302,14 @@
     <Content Include="Views\PNhap\Index.cshtml" />
     <Content Include="Views\PXuat\Index.cshtml" />
     <Content Include="Views\PTHUOC\Index.cshtml" />
+    <Content Include="Views\CTPNhap\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CTPXuat\" />
     <Folder Include="Views\Default\" />
-    <Folder Include="Views\THUOC\" />
+    <Folder Include="Views\NhanVien\" />
+    <Folder Include="Views\TonKho\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

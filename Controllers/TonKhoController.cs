@@ -8,17 +8,17 @@ using WebApplication3.Models;
 namespace WebApplication3.Controllers
 {
     /// <summary>
-    /// controller quan ly phieu xuat
+    /// controller quan ly ton kho
     /// </summary>
 
-    public class PXuatController : Controller
+    public class TonKhoController : Controller
     {
         public ttcn_btlEntities ttcn_BtlEnt { get; set; }
-        // GET: PXuat
+        // GET: TonKho
         public ActionResult Index()
         {
             ttcn_BtlEnt = new ttcn_btlEntities();
-            ViewBag.Title = "Quan ly phieu xuat";
+            ViewBag.Title = "Quan ly ton kho";
             return View(ttcn_BtlEnt);
         }
     }
